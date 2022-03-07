@@ -2,8 +2,12 @@ batch_size: 2
 iters: 80000
 
 train_dataset:
-  type: Cityscapes
-  dataset_root: data/cityscapes
+#   type: Cityscapes
+#   dataset_root: data/cityscapes
+  type: Dataset
+  dataset_root: data/CIHP
+  train_path: data/CIHP/train.txt
+  num_classes: 20
   transforms:
     - type: ResizeStepScaling
       min_scale_factor: 0.5
@@ -20,8 +24,12 @@ train_dataset:
   mode: train
 
 val_dataset:
-  type: Cityscapes
-  dataset_root: data/cityscapes
+#   type: Cityscapes
+#   dataset_root: data/cityscapes
+  type: Dataset
+  dataset_root: data/CIHP
+  val_path: data/CIHP/val.txt
+  num_classes: 20
   transforms:
     - type: Normalize
   mode: val
