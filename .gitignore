@@ -1,6 +1,6 @@
 # data
-./data/
-./output/
+data
+output
 
 # Mac system
 .DS_Store
