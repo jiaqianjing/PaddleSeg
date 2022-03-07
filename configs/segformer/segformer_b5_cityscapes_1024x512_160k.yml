@@ -5,7 +5,8 @@ iters: 160000
 
 model:
   type: SegFormer_B5
-  num_classes: 19
+#   num_classes: 19
+  num_classes: 20
 
 optimizer:
   _inherited_: False

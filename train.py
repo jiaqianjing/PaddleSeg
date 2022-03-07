@@ -144,6 +144,8 @@ def main(args):
         iters=args.iters,
         batch_size=args.batch_size)
 
+    print('>>>>>>>>>>', cfg)
+
     # Only support for the DeepLabv3+ model
     if args.data_format == 'NHWC':
         if cfg.dic['model']['type'] != 'DeepLabV3P':
@@ -156,6 +158,7 @@ def main(args):
             cfg.dic['loss']['types'][i]['data_format'] = args.data_format
 
     train_dataset = cfg.train_dataset
+    print("------>", train_dataset)
     if train_dataset is None:
         raise RuntimeError(
             'The training dataset is not specified in the configuration file.')
@@ -196,4 +199,5 @@ def main(args):
 
 if __name__ == '__main__':
     args = parse_args()
+    print("----->", args)
     main(args)
